@@ -1,0 +1,497 @@
+GET http://localhost:8080/users
+
+<> 2022-11-17T151820.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 1,
+    "name": "Mali"
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T151813.200.json
+
+###
+
+GET http://localhost:8080/users
+
+<> 2022-11-17T151428.500.json
+
+###
+
+GET http://localhost:8080/user/9
+
+<> 2022-11-17T151226.200.json
+
+###
+
+GET http://localhost:8080/user/1
+
+<> 2022-11-17T151138.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 1,
+    "name": "Mali"
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150952.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 1,
+    "name": "Mali"
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150919.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 6
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150907.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 1
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150810.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 1,
+    "name": "Morocco"
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150753.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150736.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "country": {
+    "id": 1,
+    "name": "Morocco"
+  },
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150608.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T150448.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T145429.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T145411.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T145204.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144807.200.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144725.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144632.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144444.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "countryId": 1,
+  "birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144419.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144153.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T144127.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T143846.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010-01-01"
+}
+
+<> 2022-11-17T143802.500.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}
+
+<> 2022-11-17T143720.400.json
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+
+{
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}
+
+###
+
+POST http://localhost:8080/user/save
+Content-Type: application/json
+{:
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}:
+
+<> 2022-11-17T114118.400.html
+
+###
+
+GET http://localhost:8080/user/save
+{:
+	"firstName": "john",
+	"lastName": "doe",
+	"username": "jonny",
+	"password": "132456",
+	"email": "emaill@gmail.com",
+	"birthDate": "2010/01/01"
+}:
+
+<> 2022-11-17T113853.400.html
+
+###
+

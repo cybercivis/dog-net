@@ -1,0 +1,11 @@
+{
+  "id": 9,
+  "firstName": "john",
+  "lastName": "doe",
+  "username": "jonny",
+  "password": "132456",
+  "email": "emaill@gmail.com",
+  "pictureFilePath": null,
+  "birthDate": "2010-01-01T00:00:00.000+00:00",
+  "creationDate": null
+}
