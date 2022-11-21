@@ -1,11 +1,7 @@
 package dev.cybercivizen.dognet.post;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -24,5 +20,10 @@ public class PostController {
     @RequestMapping(value = "/posts/user/{userId}", method = RequestMethod.GET, name = "Retrieve posts by a user id")
     public Iterable<Post> getPostsByUser(@PathVariable Long userId) {
         return postRepository.findByUserId(userId);
+    }
+
+    @RequestMapping(value = "/posts", method = RequestMethod.POST, name = "Save a post")
+    public Post savePost(@RequestBody Post post) {
+        return postRepository.save(post);
     }
 }

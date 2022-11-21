@@ -1,6 +1,7 @@
 package dev.cybercivizen.dognet.user;
 
 
+import dev.cybercivizen.dognet.post.Post;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -58,5 +59,10 @@ public class UserController {
                     return userRepository.save(user);
                 });
         return updatedUser;
+    }
+
+    @RequestMapping(value = "/users/{userId}/posts", method = RequestMethod.GET, name = "Retrieve user's posts")
+    public Iterable<Post> getAllUserPosts(@PathVariable Long userId) {
+        return userRepository.findAllPostsById(userId);
     }
 }
