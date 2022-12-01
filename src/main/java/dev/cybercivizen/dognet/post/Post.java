@@ -1,9 +1,7 @@
 package dev.cybercivizen.dognet.post;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import dev.cybercivizen.dognet.comment.Comment;
 import dev.cybercivizen.dognet.media.Media;
 import dev.cybercivizen.dognet.postLike.PostLike;
@@ -29,27 +27,29 @@ public class Post {
     @JoinColumn(name = "media_id")
     private Media media;
 
-    @OneToMany(mappedBy = "post")
-    private List<Comment> comment;
-
     @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy = "post")
+    private List<Comment> comments;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "post")
+    private List<PostLike> likes;
+
     @CreatedDate
     @Column(name="creation_date")
     private Instant creationDate;
 
-    @OneToMany(mappedBy = "post")
-    private List<PostLike> likes;
-
     public Post() {}
 
-    public Post(String content, Media media, List<Comment> comment, User user, Instant creationDate, List<PostLike> likes) {
+    public Post(String content, Media media, List<Comment> comments, User user, Instant creationDate, List<PostLike> likes) {
         this.content = content;
         this.media = media;
-        this.comment = comment;
+        this.comments = comments;
         this.user = user;
         this.creationDate = creationDate;
         this.likes = likes;
@@ -71,12 +71,12 @@ public class Post {
         this.media = media;
     }
 
-    public List<Comment> getComment() {
-        return comment;
+    public List<Comment> getComments() {
+        return comments;
     }
 
-    public void setComment(List<Comment> comment) {
-        this.comment = comment;
+    public void setComments(List<Comment> comment) {
+        this.comments = comment;
     }
 
     public User getUser() {

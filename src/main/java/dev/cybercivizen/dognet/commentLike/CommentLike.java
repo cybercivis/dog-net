@@ -1,5 +1,6 @@
 package dev.cybercivizen.dognet.commentLike;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import dev.cybercivizen.dognet.comment.Comment;
 import dev.cybercivizen.dognet.post.Post;
 import dev.cybercivizen.dognet.user.User;
@@ -17,10 +18,12 @@ public class CommentLike {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "comment_id")
     private Comment comment;

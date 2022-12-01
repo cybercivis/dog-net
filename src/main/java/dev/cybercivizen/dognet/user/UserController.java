@@ -1,7 +1,7 @@
 package dev.cybercivizen.dognet.user;
 
-
 import dev.cybercivizen.dognet.post.Post;
+import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -29,23 +29,23 @@ public class UserController {
         }
     }
 
-    @RequestMapping(value = "/users", method = RequestMethod.GET, name="Retrieve a list of all users")
+    @RequestMapping(value = "/users", method = RequestMethod.GET, name = "Retrieve a list of all users")
     public Iterable<User> getAllUsers() {
         return userRepository.findAll();
     }
 
-    @RequestMapping(value="/users/{usersIds}", method= RequestMethod.DELETE, name = "Delete a user or a list of users")
+    @RequestMapping(value = "/users/{usersIds}", method = RequestMethod.DELETE, name = "Delete a user or a list of users")
     public void deleteUser(@PathVariable Long[] usersIds) {
         if (usersIds.length == 1) {
-             userRepository.deleteById(usersIds[0]);
+            userRepository.deleteById(usersIds[0]);
         } else {
             userRepository.deleteAllById(List.of(usersIds));
         }
     }
 
-    @RequestMapping(value="/users", method= RequestMethod.PUT, name="Modify user information")
+    @RequestMapping(value = "/users", method = RequestMethod.PUT, name = "Modify user information")
     public Optional<User> updateUser(@RequestBody User newUser) {
-        Optional<User> updatedUser = userRepository.findById(newUser.getId())
+        return userRepository.findById(newUser.getId())
                 .map(user -> {
                     user.setFirstName(newUser.getFirstName());
                     user.setLastName(newUser.getLastName());
@@ -58,7 +58,6 @@ public class UserController {
                     user.setCreationDate(newUser.getCreationDate());
                     return userRepository.save(user);
                 });
-        return updatedUser;
     }
 
     @RequestMapping(value = "/users/{userId}/posts", method = RequestMethod.GET, name = "Retrieve user's posts")

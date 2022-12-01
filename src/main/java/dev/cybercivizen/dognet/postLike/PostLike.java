@@ -1,5 +1,6 @@
 package dev.cybercivizen.dognet.postLike;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import dev.cybercivizen.dognet.post.Post;
 import dev.cybercivizen.dognet.user.User;
 import org.springframework.data.annotation.CreatedDate;
@@ -16,10 +17,12 @@ public class PostLike {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;

@@ -1,5 +1,6 @@
 package dev.cybercivizen.dognet.reply;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import dev.cybercivizen.dognet.comment.Comment;
 import dev.cybercivizen.dognet.user.User;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,7 +11,6 @@ import java.time.Instant;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-
 public class Reply {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,10 +19,12 @@ public class Reply {
 
     private String content;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "comment_id")
     private Comment comment;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

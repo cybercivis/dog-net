@@ -1,6 +1,7 @@
 package dev.cybercivizen.dognet.user;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import dev.cybercivizen.dognet.comment.Comment;
@@ -19,6 +20,9 @@ import java.util.List;
 
 @Entity
 @EntityListeners(AuditingEntityListener.class)
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -44,19 +48,23 @@ public class User {
     @Column(name="birth_date", nullable = false)
     private Date birthDate;
 
-    @JsonManagedReference
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Post> posts;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Comment> comments;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Reply> replies;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<PostLike> postLikes;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<CommentLike> commentLikes;
 

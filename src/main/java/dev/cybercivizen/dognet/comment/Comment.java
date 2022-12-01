@@ -1,5 +1,7 @@
 package dev.cybercivizen.dognet.comment;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import dev.cybercivizen.dognet.commentLike.CommentLike;
 import dev.cybercivizen.dognet.post.Post;
 import dev.cybercivizen.dognet.reply.Reply;
@@ -21,17 +23,21 @@ public class Comment {
 
     private String content;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "post_id")
     private Post post;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "comment")
     private List<Reply> replies;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "comment")
     private List<CommentLike> likes;
 

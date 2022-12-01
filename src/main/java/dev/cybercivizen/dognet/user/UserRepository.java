@@ -15,7 +15,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
     <S extends User> S save(S user);
     void deleteById(Long userId);
     void deleteAllById(Iterable<? extends Long> usersIds);
-    @Query(value = "select * from post p join user u ON user_id = :userId", nativeQuery = true)
+    @Query("SELECT p FROM Post AS p INNER JOIN User AS u ON p.user = u WHERE u.id = :userId")
     Iterable<Post> findAllPostsById(Long userId);
-
 }
