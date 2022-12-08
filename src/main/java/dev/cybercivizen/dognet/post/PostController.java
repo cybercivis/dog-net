@@ -2,6 +2,7 @@ package dev.cybercivizen.dognet.post;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -10,6 +11,11 @@ public class PostController {
 
     public PostController(PostRepository postRepository) {
         this.postRepository = postRepository;
+    }
+
+    @RequestMapping(value="/posts", method= RequestMethod.GET, name = "Retrieve all posts")
+    public List<Post> getAllUsers() {
+        return postRepository.findAll();
     }
 
     @RequestMapping(value = "/posts/{postId}", method = RequestMethod.GET, name = "Retrieve a post by id")

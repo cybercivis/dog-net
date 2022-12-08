@@ -1,6 +1,8 @@
 package dev.cybercivizen.dognet.reply;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import dev.cybercivizen.dognet.comment.Comment;
 import dev.cybercivizen.dognet.user.User;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,6 +12,9 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 @EntityListeners(AuditingEntityListener.class)
 public class Reply {
     @Id
@@ -24,7 +29,7 @@ public class Reply {
     @JoinColumn(name = "comment_id")
     private Comment comment;
 
-    @JsonBackReference
+    //@JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

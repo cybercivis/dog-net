@@ -1,7 +1,6 @@
 package dev.cybercivizen.dognet.user;
 
 import dev.cybercivizen.dognet.post.Post;
-import org.modelmapper.ModelMapper;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;

@@ -1,7 +1,9 @@
 package dev.cybercivizen.dognet.comment;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import dev.cybercivizen.dognet.commentLike.CommentLike;
 import dev.cybercivizen.dognet.post.Post;
 import dev.cybercivizen.dognet.reply.Reply;
@@ -14,6 +16,9 @@ import java.time.Instant;
 import java.util.List;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 @EntityListeners(AuditingEntityListener.class)
 public class Comment {
     @Id
@@ -28,7 +33,7 @@ public class Comment {
     @JoinColumn(name = "post_id")
     private Post post;
 
-    @JsonBackReference
+    //@JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

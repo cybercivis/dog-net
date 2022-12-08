@@ -1,6 +1,8 @@
 package dev.cybercivizen.dognet.postLike;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import dev.cybercivizen.dognet.post.Post;
 import dev.cybercivizen.dognet.user.User;
 import org.springframework.data.annotation.CreatedDate;
@@ -10,6 +12,9 @@ import javax.persistence.*;
 import java.time.Instant;
 
 @Entity
+@JsonIdentityInfo(
+        generator = ObjectIdGenerators.PropertyGenerator.class,
+        property = "id")
 @EntityListeners(AuditingEntityListener.class)
 public class PostLike {
     @Id
@@ -17,7 +22,7 @@ public class PostLike {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @JsonBackReference
+    //@JsonBackReference
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;
