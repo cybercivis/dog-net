@@ -2,9 +2,13 @@ package dev.cybercivizen.dognet.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.cybercivizen.dognet.model.Post;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 public class Media {
     @Id
@@ -26,35 +30,6 @@ public class Media {
         this.id = id;
         this.filePath = filePath;
         this.post = post;
-    }
-
-    public String getFilePath() {
-        return filePath;
-    }
-
-    public void setFilePath(String filePath) {
-        this.filePath = filePath;
-    }
-
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
-    }
-
-    public Media(Long id, String filePath) {
-        this.id = id;
-        this.filePath = filePath;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 }
 

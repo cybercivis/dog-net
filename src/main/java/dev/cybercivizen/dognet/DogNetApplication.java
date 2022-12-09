@@ -5,7 +5,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.reactive.ReactiveSecurityAutoConfiguration;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
-@SpringBootApplication(exclude = {ReactiveSecurityAutoConfiguration.class })
+@SpringBootApplication(
+    scanBasePackages = {"dev.cybercivizen.dognet.mapper",
+                        "dev.cybercivizen.dognet.controller",
+                        "dev.cybercivizen.dognet.model",
+                        "dev.cybercivizen.dognet.repository"}
+)
+
 @EnableJpaAuditing
 public class DogNetApplication {
     public static void main(String[] args) {

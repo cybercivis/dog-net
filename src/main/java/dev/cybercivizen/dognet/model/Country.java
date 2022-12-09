@@ -1,8 +1,13 @@
 package dev.cybercivizen.dognet.model;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.List;
 
+@Getter
+@Setter
 @Entity
 public class Country {
     @Id
@@ -16,25 +21,5 @@ public class Country {
     private List<User> users;
 
     public Country() {
-    }
-
-    public Country(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 }

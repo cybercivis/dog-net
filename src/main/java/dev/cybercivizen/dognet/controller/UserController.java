@@ -1,19 +1,26 @@
 package dev.cybercivizen.dognet.controller;
 
+import dev.cybercivizen.dognet.dto.UserPreviewDTO;
+import dev.cybercivizen.dognet.mapper.MapStructMapper;
 import dev.cybercivizen.dognet.model.Post;
 import dev.cybercivizen.dognet.model.User;
 import dev.cybercivizen.dognet.repository.UserRepository;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
+//TODO: Implement ResponseEntity to make the API somewhat Restful
 @RestController
 public class UserController {
     private final UserRepository userRepository;
+    private final MapStructMapper mapper;
 
-    public UserController(UserRepository userRepository) {
+    public UserController(UserRepository userRepository, MapStructMapper mapper) {
         this.userRepository = userRepository;
+        this.mapper = mapper;
     }
 
     @RequestMapping(value = "/users", method = RequestMethod.POST, name = "Save a user")

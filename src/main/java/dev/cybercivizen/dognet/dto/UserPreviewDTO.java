@@ -4,19 +4,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.Instant;
-
 @Getter
 @Setter
-public class PostLikeDTO {
+public class UserPreviewDTO {
 
     @JsonProperty("id")
     private Long id;
 
-    @JsonProperty("user")
-    private UserPreviewDTO user;
+    @JsonProperty("username")
+    private String username;
 
-    @JsonProperty("creationDate")
-    private Instant creationDate;
+    @JsonProperty("pictureFilePath")
+    private String pictureFilePath;
 
 }
